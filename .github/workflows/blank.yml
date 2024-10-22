@@ -34,12 +34,12 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-          net user Administrator Passw0rd!
+          net user runneradmin Passw0rd!
           reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server" /v fDenyTSConnections /t REG_DWORD /d 0 /f
           netsh advfirewall firewall set rule group="remote desktop" new enable=Yes
           echo RDP creds
           echo ------
-          echo Username: Administrator
+          echo Username: runneradmin
           echo Password: Passw0rd!
           ssh -R 0:localhost:3389 -o StrictHostKeyChecking=no serveo.net
           python test.py
